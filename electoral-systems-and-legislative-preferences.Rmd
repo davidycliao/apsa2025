@@ -176,7 +176,7 @@ name:sampled-pork
  
 &nbsp;&nbsp;
  
-```{r echo = F, out.width = "80%"}
+```{r echo = F, out.width = "82%"}
 knitr::include_graphics("./images/PQ.png")
 ```
 
