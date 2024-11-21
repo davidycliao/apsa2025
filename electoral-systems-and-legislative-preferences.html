@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Electoral Systems and Legislative Preferences:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yen-Chieh (David) Liao" />
+    <meta name="author" content=".tiny[Research Fellow at The Centre for Artificial Intelligence in Government in University of Birmingham]" />
+    <meta name="author" content=".tiny[2nd Budapest Methods Workshop]" />
+    <script src="libs/header-attrs-2.28/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Electoral Systems and Legislative Preferences:
+]
+.subtitle[
+## .smallest.hi-slate[Pork Barrel Statements in Parliamentary Questions]
+]
+.author[
+### Yen-Chieh (David) Liao
+]
+.author[
+### .tiny[Research Fellow at The Centre for Artificial Intelligence in Government in University of Birmingham]
+]
+.author[
+### .tiny[2nd Budapest Methods Workshop]
+]
+.date[
+### .tiny[21 November 2024]
+]
+
+---
+
+exclude: true
+
+
+
+
+
+
+
+---
+layout: true
+# .tiny[Overview]
+---
+name:overview
+
+- .small.hi-grey[Motivation:]  &lt;br&gt; 
+  .small[- How does the electoral reform change legislators’ preference and their intentions to bring home the bacon?]  
+- .small.hi-grey[Theoretical Expectation:] &lt;br&gt; 
+  .small[- Scholars have clearly explained why intraparty competition by different rules of electoral systems increases legislators’ incentives to run on a personal reputation] 
+  .small[- We however know little about whether actual impacts introduced by the electoral reform through MMD (Multi-members District) to SMD (Single-member District) reduce legislators’ motives to pursue pork barrel project in the legislature.]
+- .small.hi-grey[Data and Method:] &lt;br&gt; 
+  .small[- I finetune  state-of-the-art transformer architectures fine-tuned with pork barrel-annotated legislation to evaluate pork-barrel activities in parliamentary questions.]
+  .small[- Approximately 150,000 PQs between 1993-2019]  
+- .small.hi-grey[Major Finding:] &lt;br&gt; 
+  .small[- Evidence exists to show that legislators under MMD are more likely to express political intention about pork-barrel projects in written parliamentary questions.]
+  .small[- the reform demonstrates temporal dynamics: while initially reducing legislators’ incentives for geographically targeted benefits, this constraining effect gradually diminishes and even reverses during election years.]
+
+---
+layout: true
+# .tiny[Legislative Motions]
+---
+name:why-pq
+
+#### Legislaive activities such as .ul.hi-grey[_legislative votings_], .ul.hi-grey[_debates_] (*e.g, ParSpeech V2*) and .ul.hi-grey[_parliamentary questions_] (*e.g, LACAN*) play a significant role in most democracies. 
+
+
+&gt; __Roll Calls__: Legislative votings are generally dominent by party 
+
+&gt; + .grey-light.it[Slapin et. al (2018): Politicians grandstand strategically against party in the British Parliament]
+
+&gt; + .grey-light.it[Park (2021): in US House committee Hearings]
+
+
+&gt; __Debates__: MPs are not equally access to floor speech
+
+
+#### The advantages of using the PQs: 
+
+&gt; .ul.hi-grey[_comprehensive_], .ul.hi-grey[_accessible_], and .ul.hi-grey[_rich_] 
+
+
+&gt; The party leadership have less control over MP's motivation to employ parliamentary questions .grey-light.it[(Shane 2011)].
+
+&gt; Parliamentary questions may reveal MPs' interests in policy preference .grey-light[(Shane 2011; Saalfeld 2011)].
+ 
+---
+
+&amp;nbsp;
+
+#### MPs ask questions for several reasons:
+
+&gt; + Because of their .hi-grey[expertise] or domain responsibility of delegation for question topics.
+
+
+&gt; + Personal preference such as their nature of .hi-grey[substantive representation] .grey-light.it[(Russo 2021; Saalfeld 2011; Martin 2011)]
+
+
+&gt; + Electoral motivation: .hi-grey[personal reputation] .grey-light[(Martin 2011)]
+
+---
+layout: true
+# .tiny[Parliarmentary Questions: An Example]
+---
+name:sampled-pork
+ 
+ &amp;nbsp;&amp;nbsp;
+
+ 
+&lt;img src="./images/PQ.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&lt;!-- --- --&gt;
+&lt;!-- layout: true --&gt;
+&lt;!-- # .tiny[Implication] --&gt;
+&lt;!-- --- --&gt;
+&lt;!-- name:implication --&gt;
+
+&lt;!-- &amp;nbsp; --&gt;
+&lt;!-- &amp;nbsp; --&gt;
+
+&lt;!-- #### In this paper: --&gt;
+
+&lt;!-- &gt; + I use case of .hi-grey[__Taiwan Legislative Yuan__], where the electoral system reformed through SNTV to SMD, to evaluate how electoral motives shape legislators' tendency to pork-barrel projects under different electoral systems. --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- &gt; + Parliamentary questions are the primary channel for legislators to .hi-grey[scrutinize the government] and .hi-grey[express political intentions].  --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- &gt; + These parliamentary questions allow identification of different .hi-grey[_question topics_], .hi-grey[_categories_] and further information regarding .hi-grey[_legislators' opinions of policy interests and agenda at the individual level_]. --&gt;
+
+---
+layout: true
+# .tiny[Background &amp; Literature]
+---
+name:background
+
+&amp;nbsp;&amp;nbsp;
+
+#### Theoretical Expectation:
+
+
+&lt;!-- &gt; + This was thought to intensify majority-seeking parties to run more than one candidate in a district, which increases incentives for candidates to run on personal votes against their party reputation .grey-light[(Cox 1990; Carey and Shugart 1995)].  --&gt;
+
+&lt;!-- &gt; + Under SNTV, co-partisan candidates cannot rely exclusively on their party reputation and have to find an alternative means of attracting votes by .hi-grey[running on a personal reputation] via .hi-grey[providing paricularistic services] .grey-light[(Cain, Ferejohn, and Fiorina 1987; Reed 1994; Carey and Shugart 1995)]. --&gt;
+
+
+&gt; + Main Hypothesis: _Legislators elected under candidate-centered electoral systems (SNTV-MMD) are more likely to submit geographically targeted questions than those elected under party-centered systems (SMD)._
+
+
+
+&lt;img src="./images/electoral-system.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+layout: true
+# .tiny[Methodology]
+---
+name:research-design
+
+
+#### Model-Finetuning:
+
+&gt; + Used existing labeled pork-barrel legislation as training data
+
+&gt; + Fine-tuned three major transformer models for Chinese classification tasks to identify
+
+&gt; + pork-barrel features in parliamentary questions across time periods
+
+#### Validation with Keyness Analysis:
+
+&gt; + Conducted post-hoc evaluation using QTA techniques
+
+&gt; + Validated results using development set
+
+####  Regression Analysis:
+
+&gt; + Performed regression analyses to test hypotheses
+
+&gt; +  Controlled for legislator and municipality fixed effects across years
+
+
+---
+layout: true
+# .tiny[Training Data]
+---
+name:research-design
+
+
+#### Pork Barrel Legislation Corpus:
+
+&gt; - Typical pork-barrel policies (or legislation) mainly incur distributed costs while generating parochial benefits for .ul.hi-grey[_specific regions_] or .ul.hi-grey[_designated population groups_].
+
+
+&lt;img src="./images/pork-example.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+
+
+&gt; - This dataset was cross-coded by three social science researchers to perform its validity, which achieves 99% in terms of consistency and preciseness among coders .grey-light[(Luor and Hsieh 2008; Luor and Liao 2009)].
+
+---
+layout: true
+# .tiny[Model-Tuning Strategies]
+---
+name:background
+
+
+#### Train, Test and Dev Set:
+
+&lt;img src="./images/traindata.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+#### Normalized Tensors: 
+
+&lt;img src="./images/weight.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&amp;nbsp;&amp;nbsp;
+
+
+#### AnnealOnPlateau Technique
+
+
+&lt;img src="./images/AnnealOnPlateau.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+
+#### Performance Metrics for All Transformer Models
+
+&lt;img src="./images/performance.png" width="98%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+####  Monitoring Generalization Performance
+
+&lt;img src="./images/finetuning.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+#### Following recent application (i.e., Müller and Proksch, 2024; Sebok and Kacsuk, 2021). 
+
+
+&lt;img src="./images/keyness.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+layout: true
+# .tiny[Regression Design]
+---
+name:research-design
+
+
+&amp;nbsp;&amp;nbsp;
+
+
+#### Construction of Pork Barrel Index:
+
+&lt;img src="./images/formula2.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+&amp;nbsp;
+
+#### Regression Design:
+
+&lt;img src="./images/formula1.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+
+---
+layout: true
+# .tiny[Results]
+---
+name:results
+
+&amp;nbsp;
+
+&lt;img src="./images/reg-new.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&amp;nbsp;
+#### Predicted Values of Pork Barrle Score with 95% Confidence Intervals.
+
+
+&lt;img src="./images/ci.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+layout: true
+# .tiny[Takeaway]
+---
+
+#### Takeaway
+
+- Evidence exists to show that legislators under SNTV are more likely to ask pork-barrel projects in the questions. 
+
+- While initially reducing legislators’ incentives for geographically targeted benefits, this constraining effect gradually
+diminishes and even reverses during election years.
+
+#### The Limitation:
+
+&gt;  __Training Data Limitation__: The training data for pork barrel legislation classification used in this paper covers a period of nearly ten years. However, the models might have limitations in capturing new concepts and patterns that emerged in the post-reform period. 
+
+
+&gt; The steady decrease in the total number of parliamentary questions (PQs) since 2003 might be attributed to the rise of social media as an alternative channel for constituent communication. -&gt; __Social Media?__
+
+---
+layout: false
+class: inverse, center, middle
+
+# Thank You
+
+---
+layout: true
+# .tiny[Table of the Appendix]
+---
+name:appendix
+
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+
+#### Supplementary
+
+.turquoise.smaller[ [The Number of Parliamentary  (Pork) Question](#num-pq) | [The Performance of the Models](#performance) 
+]
+
+
+---
+layout: true
+# .tiny[The Number of Pork Questions in CAP Domains]
+---
+name:num-pq
+&amp;nbsp;
+&amp;nbsp;
+
+
+&lt;img src="./images/num-pq-pork.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+# .tiny[The Number of Parliamentary Questions]
+---
+
+&amp;nbsp;&amp;nbsp;
+
+
+&lt;img src="./images/pork-cap.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(40000);
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+  .logo {
+    background-image: url(images/birmingham.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0.7em;
+    right: 1em;  /* 改為 1em 使 logo 更靠右 */
+    width: 100px;
+    height: 55px;
+    z-index: 0;
+  }
+</style>
+
+  
+  
+<script>
+  document
+    .querySelectorAll(
+      '.remark-slide-content' +
+        ':not(.title-slide)' +
+        ':not(.hide-logo)'
+    )
+    .forEach(el => {
+      el.innerHTML += '<div class="logo"></div>';
+    });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
