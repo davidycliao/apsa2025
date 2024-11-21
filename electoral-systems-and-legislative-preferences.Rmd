@@ -167,39 +167,18 @@ name:why-pq
 
 > + Electoral motivation: .hi-grey[personal reputation] .grey-light[(Martin 2011)]
 
+
 ---
 layout: true
 # .tiny[Parliarmentary Questions: An Example]
 ---
 name:sampled-pork
  
- &nbsp;&nbsp;
-
+&nbsp;&nbsp;
  
-```{r echo = F, out.width = "70%"}
+```{r echo = F, out.width = "80%"}
 knitr::include_graphics("./images/PQ.png")
 ```
-
-<!-- --- -->
-<!-- layout: true -->
-<!-- # .tiny[Implication] -->
-<!-- --- -->
-<!-- name:implication -->
-
-<!-- &nbsp; -->
-<!-- &nbsp; -->
-
-<!-- #### In this paper: -->
-
-<!-- > + I use case of .hi-grey[__Taiwan Legislative Yuan__], where the electoral system reformed through SNTV to SMD, to evaluate how electoral motives shape legislators' tendency to pork-barrel projects under different electoral systems. -->
-
-<!-- -- -->
-
-<!-- > + Parliamentary questions are the primary channel for legislators to .hi-grey[scrutinize the government] and .hi-grey[express political intentions].  -->
-
-<!-- -- -->
-
-<!-- > + These parliamentary questions allow identification of different .hi-grey[_question topics_], .hi-grey[_categories_] and further information regarding .hi-grey[_legislators' opinions of policy interests and agenda at the individual level_]. -->
 
 ---
 layout: true
@@ -272,7 +251,6 @@ knitr::include_graphics("./images/pork-example.png")
 ```
 
 
-
 > - This dataset was cross-coded by three social science researchers to perform its validity, which achieves 99% in terms of consistency and preciseness among coders .grey-light[(Luor and Hsieh 2008; Luor and Liao 2009)].
 
 ---
@@ -338,7 +316,6 @@ knitr::include_graphics("./images/keyness.png")
 ```
 
 
-
 ---
 layout: true
 # .tiny[Regression Design]
@@ -385,8 +362,6 @@ knitr::include_graphics("./images/reg-new.png")
 ```{r echo = F, out.width = "85%"}
 knitr::include_graphics("./images/ci.png")
 ```
-
-
 
 
 
@@ -458,7 +433,7 @@ knitr::include_graphics("./images/pork-cap.png")
 
 
 ```{r eval=FALSE, include=FALSE}
-pagedown::chrome_print("file:///Users/yenchiehliao/Dropbox/erpb/slides/slides.html#1", verbose = FALSE)
+pagedown::chrome_print("file:///Users/yenchiehliao/Dropbox/budapest-methods-workshop/electoral-systems-and-legislative-preferences.html#1", verbose = FALSE)
 ```
 
 
