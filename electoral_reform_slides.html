@@ -160,7 +160,11 @@ __Do Geographic Conditions Moderate Electoral System Effects?__
 
 --
 
-  | **Hypothesis 2.** While MMM reduces GTQs compared to SNTV, this effect is moderated by local socioeconomic characteristics.
+&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;
+
+
+&gt; **Hypothesis 2.** While MMM reduces GTQs compared to SNTV, this effect is moderated by local socioeconomic characteristics.
 
 
 ---
@@ -302,10 +306,36 @@ name:dv
 ]
 
 ---
+
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+.small[**Definition**]
+`$$\small{\text{Proportion of GTQs}_{i,t} = \frac{\text{GTQs}_{i,t}}{\text{Total Questions}_{i,t}} \times 100}$$`
+
+.small[**Refine**]
+- .small[63,748 total parliamentary questions]
+- .small[8,992 high-confidence GTQs (14%)]
+- .small[95% confidence threshold for precision]
+]
+
+.pull-right[
+.small[**Sample Coverage**]
+- .small[**Unit of Analysis**: .blue[__Legislator-year__]]
+- .small[**Time Period**: 1999-2019]
+  - .small[SNTV period: 1999-2008]
+  - .small[MMM period: 2008-2019]
+- .small[**Final Sample**: 2,809 district observations]
+- .small[Excludes CLPR and indigenous constituencies]
+]
+
+---
 layout: true
 # .tiny[Regression Design]
 ---
 name:research-design
+
 
 
 .pull-left[
@@ -325,6 +355,50 @@ name:research-design
   - .small[Sector employment (Agri/Manu/Service)]
   - .small[Higher education population share]
 ]
+
+---
+
+.pull-left[
+**Part 1: Electoral System Effects**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} +\\ \alpha_{2}\text{Year} + \alpha_{3}(\text{Post-reform}_{t} \times \text{Year}) + \\ \theta\text{Controls}_{i,t} + \mu_{i} + \epsilon_{i,t}}$$`
+- .small[**Municipality FE +  Controls**: .blue[__Party, seniority, gender, pork committee membership, electoral margin, district magnitude__]]
+]
+
+.pull-right[
+**Part 2: Socioeconomic Moderation**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} + \\ \sum_{d=1}^{5}\alpha_{4}^d(\text{Post-reform}_{t} \times \text{Conditions}^{d}_{t}) +\\ \text{Controls}}$$`
+
+- .small[**5 Municipal Indicators**:]
+  - .small[Unemployment rate, Agricultural value]
+  - .small[Sector employment (Agri/Manu/Service)]
+  - .small[Higher education population share]
+]
+
+
+---
+
+.pull-left[
+**Part 1: Electoral System Effects**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} +\\ \alpha_{2}\text{Year} + \alpha_{3}(\text{Post-reform}_{t} \times \text{Year}) + \\ \theta\text{Controls}_{i,t} + \mu_{i} + \epsilon_{i,t}}$$`
+- .small[**Municipality FE +  Controls**: .blue[__Party, seniority, gender, pork committee membership, electoral margin, district magnitude__]]
+]
+
+.pull-right[
+**Part 2: Socioeconomic Moderation**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} + \\ \sum_{d=1}^{5}\alpha_{4}^d(\text{Post-reform}_{t} \times \text{Conditions}^{d}_{t}) +\\ \text{Controls}}$$`
+
+- .small[**5 Municipal Indicators**:]
+  - .small[.blue[Unemployment rate, Agricultural value]]
+  - .small[.blue[Sector employment (Agri/Manu/Service)]]
+  - .small[.blue[Higher education population share]]
+]
+
+
+
 
 
 
