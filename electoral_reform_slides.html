@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Electoral Reform and Geographically-Targeted Oversight:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yen-Chieh Liao and Li Tang" />
+    <meta name="author" content=".tiny[University of Birmingham and University of Reading]" />
+    <meta name="author" content=".tiny[2025 APSA]" />
+    <script src="libs/header-attrs-2.29/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Electoral Reform and Geographically-Targeted Oversight:
+]
+.subtitle[
+## .smallest.hi-slate[Evidence from Taiwan Legislative Yuan]
+]
+.author[
+### Yen-Chieh Liao and Li Tang
+]
+.author[
+### .tiny[University of Birmingham and University of Reading]
+]
+.author[
+### .tiny[2025 APSA]
+]
+.date[
+### .tiny[10 September 2025]
+]
+
+---
+
+exclude: true
+
+
+
+
+
+
+
+---
+layout: true
+# .tiny[Overview]
+---
+name:overview
+
+
+- .small.hi-grey[**Motivation &amp; Research Question:**]&lt;br&gt; 
+
+--
+
+  .small[How does Taiwan's SNTV→SMD electoral reform affect legislators' particularistic behaviors?]
+  
+--
+
+- .small.hi-grey[**Data:**] &lt;br&gt;
+  + .small[63,748 parliamentary questions from 402 district legislators (two decades)]
+  + .small[Focus on geographically targeted questions (GTQs) — _content that addresses constituency-specific geographical interests and demands_]
+  
+--
+
+- .small.hi-grey[**Method &amp; Empirical Strategy:**] &lt;br&gt; 
+  .small[Fine-tuned transformer models to identify geographically targeted content + regression analysis]  
+
+--
+  
+- .small.hi-grey[**Major Finding:**] &lt;br&gt; 
+  + .small[SNTV → SMD transition reduces GTQs, with variation across municipalities by socioeconomic characteristics] &lt;br&gt; 
+  + .small[SNTV demonstrates greater particularistic responsiveness than SMD]
+  
+---
+layout: true
+# .tiny[Motivation]
+---
+name:why-pq
+
+__What We Know:__
+
+--
+
+- .small.hi-grey[Established:] Different candidate-centered systems create varying incentives for personal reputation (e.g., Shugart and Wattenberg, 2001; Shugart, 2005; Grofman et al., 1999).&lt;br&gt;
+
+--
+
+- .small.hi-grey[Evidence:] Studies on manifestos (e.g., Catalinac, 2016a,b; Crisp et al., 202), legislative voting (e.g., Liao, 2024), political deliberation (e.g., Motolinia, 2021; Høyland and Søyland, 2019) and legislation (e.g., Decadri et al., 2022).
+
+--
+
+__Gap__
+
+- .small.hi-grey[**Missing:**] Previous studies focus on legislative outputs/campaign promises, not ongoing behavior
+
+--
+
+- .small.hi-grey[**Opportunity:**] Systematic evidence on SNTV→SMD transitions Japan &lt;br&gt;  
+--
+  → Taiwan's reform provides anotehr ideal case study
+
+
+---
+layout: true
+---
+name:why-pq
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+
+
+### .center[*Two important debates in candidate-centered electoral system literature*]
+
+---
+layout: true
+# .tiny[Debates Ⅰ]
+---
+name:why-pq
+
+
+__Does SNTV → SMD Reduce Particularistm?__
+
+--
+
+.small.hi-grey[**The Literature:**] 
+  - SNTV's intraparty competition encourages  →  personal reputation  →  particularistic appeals&lt;br&gt;
+  - SMD's interparty competition promotes programmatic appeals to broader coalition .small[(e.g., Cain 1987; Carey 1995; Cox 1997; Duverger 1954; Catalinac 2016)]
+
+--
+
+.small.hi-grey[**Japan Evidence:**] Shift from pork-barrel to programmatic campaigning .small[(Catalinac 2016) and issue coverge on copartisan on manifesto (Catalinac 2017)]
+
+--
+
+.small.hi-grey[**Taiwan Evidence:**] Particularistic behavior persists or increases .small[(Liao et al. 2013; Luor and Shieh 2009)]
+
+--
+
+&gt; **Hypothesis 1.** Due to the elimination of intraparty competition and the necessity to appeal to broader constituencies, legislators elected under MMM are less likely to submit GTQs compared to those elected under the SNTV system.
+
+---
+layout: true
+# .tiny[Dabate ⅠⅠ]
+---
+name:why-pq
+
+&amp;nbsp;
+
+__Do Geographic Conditions Moderate Electoral System Effects?__
+
+--
+
+- .small.hi-grey[Local Socioeconomic Conditions:] Economic challenges/homogeneity may override institutional incentives
+
+- .small.hi-grey[Evidence:] Unemployment, manufacturing concentration affect legislative behavior .small[(Rickard 2012; Cayton 2022; Harden 2013)]
+
+
+--
+
+  | **Hypothesis 2.** While MMM reduces GTQs compared to SNTV, this effect is moderated by local socioeconomic characteristics.
+
+
+---
+layout: true
+# .tiny[Data: Two Decades of Parliamentary Questions]
+---
+name:why-pq
+
+
+__Our Dataset__
+- .small.hi-grey[**Scope:**] 63,748 parliamentary questions from 402 district legislators (20-year period) from SNTV to MMM, focusing on district constituencies only (excluding CLPR and indigenous constituencies)
+
+--
+
+
+__Why Parliamentary Questions?__
+- .small.hi-grey[**Advantages:**] Continuous evidence of policy priorities throughout terms .small[(Martin 2011; Saalfeld 2011)]
+- .small.hi-grey[**vs. Floor Debates:**] No time limits or strict party discipline constraints .small[(Proksch 2011; Martin 2010)]
+- .small.hi-grey[**vs. Manifestos:**] Captures actual legislative behavior, not just campaign promises .small[(Stafford 2025)]
+
+--
+
+__Taiwan's Institutional Design__
+- .small.hi-grey[**Compusalsoiry:**] Mandatory 20-day response requirement enhances strategic use
+- .small.hi-grey[**Build personal reputation:**]  national policy vs local constituency needs
+
+
+
+
+---
+layout: true
+# .tiny[Transformer-Based Detection of GTQ Content]
+---
+name:why-pq
+
+
+&lt;div style="margin-top: -20px;"&gt;
+
+
+.pull-left[
+&lt;img src="./images/train-data.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;img src="./images/train-split.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-left[
+
+&lt;img src="./images/performance.png" width="99%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+.pull-right[
+
+&lt;img src="./images/pq-eg.png" width="99%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+layout: true
+# .tiny[Performance on Held-out data]
+---
+name:why-pq
+
+&lt;br&gt;&lt;br&gt;
+
+
+
+.pull-left[
+&lt;img src="./images/val-set.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;img src="./images/val-set-2.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+
+
+---
+layout: true
+# .tiny[Posthoc Validation]
+---
+name:data
+
+&lt;img src="./images/keyness.png" width="82%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+
+
+
+---
+layout: true
+# .tiny[Dependent Variable: Proportion of GTQs]
+---
+name:dv
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+.small[**Definition**]
+`$$\small{\text{Proportion of GTQs}_{i,t} = \frac{\text{GTQs}_{i,t}}{\text{Total Questions}_{i,t}} \times 100}$$`
+
+.small[**Refine**]
+- .small[63,748 total parliamentary questions]
+- .small[8,992 high-confidence GTQs (14%)]
+- .small[95% confidence threshold for precision]
+]
+
+.pull-right[
+.small[**Sample Coverage**]
+- .small[**Unit of Analysis**: Legislator-year]
+- .small[**Time Period**: 1999-2019]
+  - .small[SNTV period: 1999-2008]
+  - .small[MMM period: 2008-2019]
+- .small[**Final Sample**: 2,809 district observations]
+- .small[Excludes CLPR and indigenous constituencies]
+]
+
+---
+layout: true
+# .tiny[Regression Design]
+---
+name:research-design
+
+
+.pull-left[
+**Part 1: Electoral System Effects**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} +\\ \alpha_{2}\text{Year} + \alpha_{3}(\text{Post-reform}_{t} \times \text{Year}) + \\ \theta\text{Controls}_{i,t} + \mu_{i} + \epsilon_{i,t}}$$`
+- .small[**Municipality FE +  Controls**: Party, seniority, gender, pork committee membership, electoral margin, district magnitude]
+]
+
+.pull-right[
+**Part 2: Socioeconomic Moderation**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} + \\ \sum_{d=1}^{5}\alpha_{4}^d(\text{Post-reform}_{t} \times \text{Conditions}^{d}_{t}) +\\ \text{Controls}}$$`
+
+- .small[**5 Municipal Indicators**:]
+  - .small[Unemployment rate, Agricultural value]
+  - .small[Sector employment (Agri/Manu/Service)]
+  - .small[Higher education population share]
+]
+
+
+
+---
+layout: true
+# .tiny[Main Findings: The Effects on Particularistic Behavior (1/2)]
+---
+&lt;div style="margin-top: -20px;"&gt;
+
+
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+
+&lt;img src="./images/result1.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+
+]
+
+.pull-right[
+**SNTV System (Pre-2008)**
+- .small[Legislators differentiate via distributive activities]
+- .small[Higher proportion of GTQs]
+- .small[Legislators differentiate via distributive activities]
+
+**MMM System (Post-2008)**
+- .small[Lower GTQ submissions initially]
+- .small[Single-member districts → Interparty competition]
+- .small[Party labels become more important]
+- .small[Effect diminishes over time (learning effect)]
+]
+
+
+
+---
+layout: true
+# .tiny[Main Findings: The Impacts of Socioeconomic Context (2/2)]
+---
+&lt;div style="margin-top: -20px;"&gt;
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+&lt;img src="./images/result2.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Under SNTV**
+- .small[**High unemployment**: Fewer distributive policies]
+- .small[**Economic stability**: More GTQs for reputation]
+- .small[**Lower education**: Traditional patron-client relations]
+- .small[**Higher education**: Less distributive engagement]
+
+**Under MMM**
+- .small[Both socioeconomic effects substantially neutralized]
+- .small[Single-member structure reduces contextual responsiveness]
+]
+
+---
+layout: true
+# .tiny[Takeaway]
+---
+&lt;div style="margin-top: -20px;"&gt;
+
+.pull-left[
+**Reform Goals: SNTV → SMD**&lt;br&gt; 
+- .small[Reduce money politics and factionalism]&lt;br&gt; 
+- .small[Improve legislative efficiency]
+
+**Actual Effects: SMD Impact**&lt;br&gt; 
+- .small[Socioeconomic targeting effects substantially neutralized]&lt;br&gt; 
+- .small[SMD structure reduces contextual responsiveness]
+
+**Academic Debate → Reality**&lt;br&gt; 
+- .small[Wu (2002): SNTV was unfairly scapegoated for broader political problems]&lt;br&gt; 
+- .small[We: SMD reduces particularistic responsiveness]&lt;br&gt; 
+
+]
+
+--
+
+.pull-right[
+**Implication** &lt;br&gt; 
+- .small[Taiwan's demographic complexity (Hoklo, Hakka, Mainlanders, indigenous, new immigrants) makes SNTV's multi-member structure particularly valuable for minority representation compared to SMD]&lt;br&gt; 
+- .small[Efficiency vs. representational inclusiveness]&lt;br&gt; 
+- .small[Need to balance system goals with minority needs]
+]
+
+---
+layout: true
+class: inverse, center, middle
+# Thank You
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(40000);
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
