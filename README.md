@@ -10,4 +10,6 @@
 
 ### Discussion Note:
 
-Sun & Wang
+- Sun & Wang [<a href="https://raw.githack.com/davidycliao/apsa2025/main/cgot2025.html" target="_blank">`.html`</a> | <a href="https://raw.githack.chttps://raw.githack.com/davidycliao/apsa2025/main/cgot2025.pdf" target="_blank">`.pdf`</a>]
+
+
