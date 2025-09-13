@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Discussion Note: Wang &amp; Sun</title>
+    <title>.hi-green[Electoral Systems and Geographically-Targeted Oversight:]</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Yen-Chieh Liao" />
-    <meta name="author" content=".tiny[The Centre for Artificial Intelligence in Government, University of Birmingham]" />
-    <meta name="author" content=".tiny[2025 APSA CGOT]" />
+    <meta name="author" content="Yen-Chieh Liao and Li Tang" />
+    <meta name="author" content=".tiny[University of Birmingham and University of Reading]" />
+    <meta name="author" content=".tiny[2025 APSA]" />
     <script src="libs/header-attrs-2.29/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
@@ -17,16 +17,19 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Discussion Note: Wang &amp; Sun
+# .hi-green[Electoral Systems and Geographically-Targeted Oversight:]
+]
+.subtitle[
+## .smallest.hi-slate[Evidence from Taiwan Legislative Yuan]
 ]
 .author[
-### <strong>Yen-Chieh Liao</strong>
+### <strong>Yen-Chieh Liao and Li Tang</strong>
 ]
 .author[
-### .tiny[The Centre for Artificial Intelligence in Government, University of Birmingham]
+### .tiny[University of Birmingham and University of Reading]
 ]
 .author[
-### .tiny[2025 APSA CGOT]
+### .tiny[2025 APSA]
 ]
 .date[
 ### .tiny[13 September 2025]
@@ -39,192 +42,672 @@ exclude: true
 
 
 
-
-
-
 ---
 layout: true
 # .tiny[Overview]
 ---
-name: overview
+name:overview
 
 
-#### __Similarities__
-
---
-
-  ▫ .small[Study Taiwanese legislators in the same institutional context]  &lt;br&gt; 
+- .small.hi-grey[**Motivation &amp; Research Question:**]&lt;br&gt; 
 
 --
-  ▫ .small[Emphasize strategic political behavior]  &lt;br&gt;
 
---
-  ▫ .small[rational choice → motivation → reelected]&lt;br&gt; 
+  .small[How does Taiwan's SNTV→SMD electoral reform affect legislators' particularistic behaviors?]
   
-#### __Differences__
-
 --
 
-.pull-left[
-- .small[**Sun**:]&lt;br&gt; 
-   ▫ .small[Top-down perspective]  
-]
+- .small.hi-grey[**Data:**] &lt;br&gt;
+  + .small[63,748 parliamentary questions from 402 district legislators (two decades)]&lt;br&gt;
 
+--
+  + .small[Focus on geographically targeted questions (GTQs) — .blue[__content that addresses constituency-specific geographical interests and demands__]]
+  
+--
 
-.pull-right[
-- .small[**Wang**:]&lt;br&gt; 
-   ▫ .small[Bottom-up perspective]  
-]
+- .small.hi-grey[**Method &amp; Empirical Strategy:**] &lt;br&gt; 
+  .small[Fine-tuned transformer models to identify geographically targeted content + regression analysis]  
 
+--
+  
+- .small.hi-grey[**Major Finding:**] &lt;br&gt; 
+  + .small[SNTV → SMD transition reduces GTQs, with variation across municipalities by socioeconomic characteristics] &lt;br&gt; 
+  + .small[SNTV demonstrates greater particularistic responsiveness than SMD]
+  
 ---
-
-
-
-#### __Similarities__
-
-  ▫ .small[Study Taiwanese legislators in the same institutional context]  
-  ▫ .small[Emphasize strategic political behavior]  
-  ▫ .small[rational choice → motivation → reelected]&lt;br&gt; 
-  
-#### __Differences__
-
-
-.pull-left[
-- .small[**Sun**:]&lt;br&gt; 
-   ▫ .small[Top-down perspective]  
-   ▫ .small[Quantitative analysis, 2012-2024, NLP + Hypothesis Testing]  
-]
-
-
-.pull-right[
-- .small[**Wang**:]&lt;br&gt; 
-   ▫ .small[Bottom-up perspective]  
-   ▫ .small[2018 fieldwork, Legislators' participation in constituents' private events]  
-]
-
+layout: true
+# .tiny[Motivation]
 ---
+name:why-pq
 
+__What We Know:__
 
+--
 
-#### __Similarities__
+- .small.hi-grey[Established:] &lt;br&gt;
+Different candidate-centered systems (SNTV v.s. SMD) create varying incentives for personal reputation (e.g., Shugart and Wattenberg, 2001; Shugart, 2005; Grofman et al., 1999).&lt;br&gt;
 
-  ▫ .small[Study Taiwanese legislators in the same institutional context]  
-  ▫ .small[Emphasize strategic political behavior]  
-  ▫ .small[rational choice → motivation → reelected]&lt;br&gt; 
-  
-#### __Differences__
+--
 
+- .small.hi-grey[Electoral System Literature:] 
+Studies on manifestos (e.g., Catalinac, 2016a,b; Crisp et al., 2024), legislative voting (e.g., Liao, 2024), political deliberation (e.g., Motolinia, 2021; Høyland and Søyland, 2019) and legislation (e.g., Decadri et al., 2022).
 
-.pull-left[
-- .small[**Sun**:]&lt;br&gt; 
-   ▫ .small[Top-down perspective]  
-   ▫ .small[Quantitative analysis, 2012-2024, NLP + Hypothesis Testing]  
-   ▫ .small[Electoral competition → Legislative strategic calculation → Emotional rhetoric choice → Media attention → Electoral benefits]  
-]
+--
 
+__Gap__
 
-.pull-right[
-- .small[**Wang**:]&lt;br&gt; 
-   ▫ .small[Bottom-up perspective]  
-   ▫ .small[2018 fieldwork, Legislators' participation in constituents' private events]  
-   ▫ .small[Voters' status needs → Invitation to legislators → Performative responsiveness → Social status enhancement → Political support reciprocity]  
-]
+- .small.hi-grey[**Missing:**] Previous studies focus on legislative outputs/campaign promises, not ongoing behavior
 
+--
 
----
-
-
-
-#### __Similarities__
-
-  ▫ .small[Study Taiwanese legislators in the same institutional context]  
-  ▫ .small[Emphasize strategic political behavior]  
-  ▫ .small[rational choice → motivation → reelected]&lt;br&gt; 
-  
-#### __Differences__
-
-
-.pull-left[
-- .small[**Sun**:]&lt;br&gt; 
-   ▫ .small[Top-down perspective]  
-   ▫ .small[Quantitative analysis, 2012-2024, NLP + Hypothesis Testing]  
-   ▫ .small[Electoral competition → Legislative strategic calculation → Emotional rhetoric choice → Media attention → Electoral benefits]  
-   ▫ .small[Electoral competition pressure → Emotional rhetoric strategy]
-]
-
-
-.pull-right[
-- .small[**Wang**:]&lt;br&gt; 
-   ▫ .small[Bottom-up perspective]  
-   ▫ .small[2018 fieldwork, Legislators' participation in constituents' private events]  
-   ▫ .small[Voters' status needs → Invitation to legislators → Performative responsiveness → Social status enhancement → Political support reciprocity]  
-   ▫ .small[Voters' impression → Performative response]
-]
+- .small.hi-grey[**Opportunity:**] Systematic evidence on SNTV→SMD transitions Japan &lt;br&gt;  
+--
+  → Taiwan's reform provides anotehr ideal case study
 
 
 ---
 layout: true
-# .tiny[Wang's Performative Responsiveness]
 ---
-name: overview
+name:why-pq
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
 
 
-#### __Strengths__
+### .center[*Two important debates in candidate-centered electoral system literature*]
 
-   ▫ .small[Expanding Clientelism Research: Extends from political (e.g., distributive/pork) benefits to symbolic representation/benefits]  &lt;br&gt; 
---
-   ▫ .small[Applies Goffman's "front stage/back stage" concepts to analyze how politicians strategically perform intimate relationships]  
+---
+layout: true
+# .tiny[Debates Ⅰ]
+---
+name:why-pq
+
+
+__Does SNTV → SMD Reduce Particularistm?__
 
 --
 
-#### __Conceptualization Comments__
-   ▫ .small[The operationalization of "performative responsiveness" remains unclear] &lt;br&gt; 
+.small.hi-grey[**The Literature:**] 
+  - SNTV's intraparty competition encourages  →  personal reputation  →  particularistic appeals&lt;br&gt;
 --
-   → .small[Some Latin American literature or pork barrel behavior literature might help you with theoretical construction] &lt;br&gt; 
+
+  - SMD's interparty competition promotes programmatic appeals to broader coalition .small[(e.g., Cain 1987; Carey 1995; Cox 1997; Duverger 1954; Catalinac 2016)]
+
 --
-   ▫ .small[Theoretical Dialogue to Grandstanding Literature (Slapin et al., 2018; Park, 2023; Lewallen &amp; Park, 2024)] &lt;br&gt; 
-   
+
+.small.hi-grey[**Japan Evidence:**] Shift from pork-barrel to programmatic campaigning .small[(Catalinac 2016) and issue coverge on copartisan on manifesto (Catalinac 2017)]
+
 --
-   → .small[Extraposition taking → Attention seeking] &lt;br&gt; 
+
+.small.hi-grey[**Taiwan Evidence:**] Particularistic behavior persists or increases .small[(Liao et al. 2013; Luor and Shieh 2009)]
+
+--
+
+&gt; **Hypothesis 1.** Due to the elimination of intraparty competition and the necessity to appeal to broader constituencies, __legislators elected under MMM are less likely to submit GTQs compared to those elected under the SNTV system.__
+
+
+---
+layout: true
+# .tiny[Dabate ⅠⅠ]
+---
+name:why-pq
+
+&amp;nbsp;
+
+__Do Geographic Conditions Moderate Electoral System Effects?__
+
+--
+
+- .small.hi-grey[Local Socioeconomic Conditions:]&lt;br&gt; 
+Economic challenges/homogeneity may override institutional incentives
+
+- .small.hi-grey[Evidence:] &lt;br&gt;
+Unemployment, manufacturing concentration affect legislative behavior .small[(Rickard 2012; Cayton 2022; Harden 2013)]
+
+
+--
+
+&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;
+
+
+&gt; **Hypothesis 2.** While MMM reduces GTQs compared to SNTV, __this effect is moderated by local socioeconomic characteristics__.
+
+
+---
+layout: true
+# .tiny[Data: Two Decades of Parliamentary Questions]
+---
+name:why-pq
+
+
+__Our Dataset__
+- .small.hi-grey[**Scope:**] 63,748 parliamentary questions from 402 district legislators (20-year period) from SNTV to MMM, focusing on district constituencies only (excluding CLPR and indigenous constituencies)
+
+--
+
+
+__Why Parliamentary Questions?__
+- .small.hi-grey[**Advantages:**] Continuous evidence of policy priorities throughout terms .small[(Martin 2011; Saalfeld 2011)]
+- .small.hi-grey[**vs. Floor Debates:**] No time limits or strict party discipline constraints .small[(Proksch 2011; Martin 2010)]
+- .small.hi-grey[**vs. Manifestos:**] Captures actual legislative behavior, not just campaign promises .small[(Stafford 2025)]
+
+--
+
+__Taiwan's Institutional Design__
+- .small.hi-grey[**Compusalsoiry:**] Mandatory 20-day response requirement enhances strategic use
+- .small.hi-grey[**Build personal reputation:**]  national policy vs local constituency needs
+
+
+
+
+---
+layout: true
+# .tiny[Transformer-Based Detection of GTQ Content]
+---
+name:why-pq
+
+
+&lt;div style="margin-top: -20px;"&gt;
+
+
+.pull-left[
+&lt;img src="./images/train-data.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;img src="./images/train-split.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
 
 ---
 
 &lt;br&gt;&lt;br&gt;
 
-.small[Future Work: Apply your theory to more empirical analysis]
+
+
+&lt;img src="./images/train-split.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+
+&lt;img src="./images/train-split-3.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+
+&lt;img src="./images/train-split-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+
+&lt;img src="./images/train-split-2.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+&lt;div style="margin-top: -20px;"&gt;
+
 
 .pull-left[
-
-&lt;img src="./discussant-note-images/legis.png" width="100%" style="display: block; margin: auto;" /&gt;
-&lt;/div&gt;
+&lt;img src="./images/train-data.png" width="95%" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
 
-&lt;img src="./discussant-note-images/apsa.png" width="75%" style="display: block; margin: auto;" /&gt;
-   
+&lt;img src="./images/train-split.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+&lt;div style="margin-top: -20px;"&gt;
+
+--
+
+.pull-left[
+
+&lt;img src="./images/performance.png" width="99%" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+
+&lt;br&gt;
+
+
+
+&lt;img src="./images/performance.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+&lt;br&gt;
+
+
+
+&lt;img src="./images/performance1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+&lt;br&gt;
+
+
+
+&lt;img src="./images/performance2.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+&lt;br&gt;
+
+
+
+&lt;img src="./images/performance3.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;br&gt;
+
+
+
+&lt;img src="./images/performance4.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;div style="margin-top: -20px;"&gt;
+
+
+.pull-left[
+&lt;img src="./images/train-data.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="./images/train-split.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+&lt;div style="margin-top: -20px;"&gt;
+
+
+.pull-left[
+
+&lt;img src="./images/performance.png" width="99%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+.pull-right[
+&lt;img src="./images/PQ.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+
+---
+layout: true
+# .tiny[Performance on Held-out data]
+---
+name:why-pq
+
+&lt;br&gt;&lt;br&gt;
+
+
+
+.pull-left[
+&lt;img src="./images/val-set.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="./images/val-setb.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+&lt;img src="./images/val-set2.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="./images/val-setb2.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+layout: true
+# .tiny[Posthoc Validation]
+---
+name:data
+
+&lt;img src="./images/keyness.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+
+&lt;img src="./images/keyness-2.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="./images/keyness-3.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="./images/keyness-4.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+layout: true
+# .tiny[Dependent Variable: Proportion of GTQs]
+---
+name:dv
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+.small[**Definition**]
+`$$\small{\text{Proportion of GTQs}_{i,t} = \frac{\text{GTQs}_{i,t}}{\text{Total Questions}_{i,t}} \times 100}$$`
+
+.small[**Refine**]
+- .small[63,748 total parliamentary questions]
+- .small[8,992 high-confidence GTQs (14%)]
+- .small[95% confidence threshold for precision]
+]
+
+.pull-right[
+.small[**Sample Coverage**]
+- .small[**Unit of Analysis**: Legislator-year]
+- .small[**Time Period**: 1999-2019]
+  - .small[SNTV period: 1999-2008]
+  - .small[MMM period: 2008-2019]
+- .small[**Final Sample**: 2,809 district observations]
+- .small[Excludes CLPR and indigenous constituencies]
+]
+
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+.small[**Definition**]
+`$$\small{\text{Proportion of GTQs}_{i,t} = \frac{\text{GTQs}_{i,t}}{\text{Total Questions}_{i,t}} \times 100}$$`
+
+.small[**Refine**]
+- .small[63,748 total parliamentary questions]
+- .small[8,992 high-confidence GTQs (14%)]
+- .small[95% confidence threshold for precision]
+]
+
+.pull-right[
+.small[**Sample Coverage**]
+- .small[**Unit of Analysis**: .blue[__Legislator-year__]]
+- .small[**Time Period**: 1999-2019]
+  - .small[SNTV period: 1999-2008]
+  - .small[MMM period: 2008-2019]
+- .small[**Final Sample**: 2,809 district observations]
+- .small[Excludes CLPR and indigenous constituencies]
 ]
 
 ---
 layout: true
-# .tiny[Sun's Strategic Use of Emotions]
+# .tiny[Regression Design]
 ---
-name: overview
+name:research-design
 
-#### Strength
-   ▫ .small[Utilizes fine-tuned models for sentiment analysis with clear theoretical foundation for hypothesis testing]  
-   ▫ .small[Creates innovative stronghold measurement for single-member districts (SMD)]
 
-#### Comments
 
-- .small[**Dialogue with Grandstanding Literature** (similar to Wang's paper):]&lt;br&gt;
-- .small[**Merge H1 + H2**: Consider developing conditional hypotheses extending to:]&lt;br&gt;
-   ▫ .small[go more beyond: intraparty competition]
-   ▫ .small[Municipality homogeneity's effects (industry composition, education levels, Liao and Tang 2025)]
-- .small[**Fine-tuning Performance**: Google BERT or Taiwan's models?]&lt;br&gt;
-   ▫ .small[Human Validation: Recommend random sampling of 5% for manual verification]
-- .small[**Sentiment Detection Refinement**: Consider fine-tuning specifically for negative language + hate speech detection (Wang &amp; Day 2022)  → extension toward populism speech  ?]&lt;br&gt;
+.pull-left[
+**Part 1: Electoral System Effects**
 
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} +\\ \alpha_{2}\text{Year} + \alpha_{3}(\text{Post-reform}_{t} \times \text{Year}) + \\ \theta\text{Controls}_{i,t} + \mu_{i} + \epsilon_{i,t}}$$`
+- .small[**Municipality FE +  Controls**: Party, seniority, gender, pork committee membership, electoral margin, district magnitude]
+]
+
+.pull-right[
+**Part 2: Socioeconomic Moderation**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} + \\ \sum_{d=1}^{5}\alpha_{4}^d(\text{Post-reform}_{t} \times \text{Conditions}^{d}_{t}) +\\ \text{Controls}}$$`
+
+- .small[**5 Municipal Indicators**:]
+  - .small[Unemployment rate]
+  - .small[Sector employment (Agri/Manu/Service)]
+  - .small[Higher education population share]
+]
+
+---
+
+.pull-left[
+**Part 1: Electoral System Effects**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} +\\ \alpha_{2}\text{Year} + \alpha_{3}(\text{Post-reform}_{t} \times \text{Year}) + \\ \theta\text{Controls}_{i,t} + \mu_{i} + \epsilon_{i,t}}$$`
+- .small[**Municipality FE +  Controls**: .blue[__Party, seniority, gender, pork committee membership, electoral margin, district magnitude__]]
+]
+
+.pull-right[
+**Part 2: Socioeconomic Moderation**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} + \\ \sum_{d=1}^{5}\alpha_{4}^d(\text{Post-reform}_{t} \times \text{Conditions}^{d}_{t}) +\\ \text{Controls}}$$`
+
+- .small[**5 Municipal Indicators**:]
+  - .small[Unemployment rate, Agricultural value]
+  - .small[Sector employment (Agri/Manu/Service)]
+  - .small[Higher education population share]
+]
+
+
+---
+
+.pull-left[
+**Part 1: Electoral System Effects**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} +\\ \alpha_{2}\text{Year} + \alpha_{3}(\text{Post-reform}_{t} \times \text{Year}) + \\ \theta\text{Controls}_{i,t} + \mu_{i} + \epsilon_{i,t}}$$`
+- .small[**Municipality FE +  Controls**: .blue[__Party, seniority, gender, pork committee membership, electoral margin, district magnitude__]]
+]
+
+.pull-right[
+**Part 2: Socioeconomic Moderation**
+
+- `$$\small{\text{GTQs}_{i,t} = \alpha_{0} + \alpha_{1}\text{Post-reform}_{t} + \\ \sum_{d=1}^{5}\alpha_{4}^d(\text{Post-reform}_{t} \times \text{Conditions}^{d}_{t}) +\\ \text{Controls}}$$`
+
+- .small[**5 Municipal Indicators**:]
+  - .small[.blue[__Unemployment rate, Agricultural value__]]
+  - .small[.blue[__Sector employment (Agri/Manu/Service)__]]
+  - .small[.blue[__Higher education population share__]]
+]
+
+
+
+
+
+
+---
+layout: true
+# .tiny[Main Findings: The Effects on Particularistic Behavior (1/2)]
+---
+&lt;div style="margin-top: -20px;"&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+
+&lt;img src="./images/result1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+
+]
+
+.pull-right[
+**SNTV (Pre-2008)**
+- .small[Legislators differentiate via distributive activities]
+- .small[Higher GTQs]
+
+
+**SMD  (Post-2008)**
+- .small[SMD → Interparty competition]
+- .small[Lower GTQ initially]
+- .small[Party labels ↑]
+- .small[Effect diminishes over time]
+]
+
+
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+
+&lt;img src="./images/result1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+
+]
+
+.pull-right[
+**SNTV (Pre-2008)**
+- .small[Legislators differentiate via distributive activities]
+- .small[Higher GTQs]
+
+
+**SMD  (Post-2008)**
+- .small[Lower GTQ initially]
+- .small[SMD → Interparty competition]
+- .small[Party labels ↑]
+- .small.blue[__Effect diminishes over time__]
+]
+
+
+
+---
+layout: true
+# .tiny[Main Findings: The Impacts of Socioeconomic Context (2/2)]
+---
+&lt;div style="margin-top: -20px;"&gt;
+
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+&lt;img src="./images/result2.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Under SNTV**
+- .small[High unemployment: Fewer distributive policies]
+- .small[Economic stability: More GTQs for reputation]
+- .small[Lower education: Traditional patron-client relations]
+- .small[Higher education: Less distributive engagement]
+
+**Under SMD**
+- .small[Both socioeconomic effects substantially neutralized]
+- .small[Single-member structure reduces contextual responsiveness]
+]
+
+---
+
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+&lt;img src="./images/result2.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Under SNTV**
+- .small[.blue[**High unemployment**]: Fewer distributive policies]
+- .small[.blue[**Economic stability**]: More GTQs for reputation]
+- .small[.blue[**Lower education**]:  Traditional patron-client relations]
+- .small[.blue[**Higher education**]: Less distributive engagement]
+
+**Under SMD**
+- .small[Both socioeconomic effects substantially neutralized]
+- .small[Single-member structure reduces contextual responsiveness]
+]
+
+
+
+---
+
+.pull-left[
+&lt;div style="margin-top: 80px;"&gt;
+&lt;img src="./images/result2.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Under SNTV**
+- .small[.blue[**High unemployment**]: Fewer distributive policies]
+- .small[.blue[**Economic stability**]: More GTQs for reputation]
+- .small[.blue[**Lower education**]:  Traditional patron-client relations]
+- .small[.blue[**Higher education**]: Less distributive engagement]
+
+**Under SMD**
+- .small[Both socioeconomic effects substantially .blue[**neutralized**]]
+- .small[Single-member structure .blue[**reduces**] contextual responsiveness]
+]
+
+---
+layout: true
+# .tiny[Takeaway]
+---
+
+&lt;br&gt;&lt;br&gt;
+
+
+**Reform Goals (KMT + DPP): SNTV → SMD**&lt;br&gt;
+- .small[Reduce money politics and factionalism]&lt;br&gt; 
+- .small[Improve legislative efficiency]
+
+--
+
+
+**Actual Effects: SMD Impact**&lt;br&gt; 
+- .small[Socioeconomic effects substantially neutralized]&lt;br&gt; 
+- .small[SMD reduces responsiveness]
+
+--
+
+
+**Academic Debate → Reality**&lt;br&gt; 
+- .small[Wu (2002): SNTV was unfairly scapegoated for broader political problems]&lt;br&gt; 
+- .small[We: SMD reduces particularistic responsiveness]&lt;br&gt; 
+
+
+
+
+---
+layout: true
+class: inverse, center, middle
+# Thank You
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
